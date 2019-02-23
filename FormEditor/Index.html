@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Редактор</title>
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="css/site.css">
+	</head>
+	<body>
+		<div class="justify-content-md-center container margin-top">
+			<div class=" offset-2 col-8 border border-dark work-field">
+			<h2>Редактирование формы</h2>
+			<form method="post" action="" id="edit-form">
+				<div class="form-group">
+					<input type="text" name="form-title" placeholder="Заголовок формы" class="form-control" required>
+				</div>
+				<div class="form-group">
+					<textarea name="form-description" placeholder="Описание формы" class="form-control" rows="3" required></textarea>
+				</div>
+				<h5>Поля формы</h5>
+				<div class="content-container"> <!-- контейнер полей -->
+					<div class="justify-content-md-center border border-dark content"> <!-- поле формы, является шаблоном -->
+						<button type="button" class="close" aria-label="Close">
+	  						<span aria-hidden="true">&times;</span>
+						</button>
+						<div class="row">
+							<div class="col-6">
+								<input type="text" name="field-title" placeholder="Заголовок поля" class="form-control" required>
+							</div>
+							<div class="col-6">
+								<select class="form-control selector" required> <!-- В виду того, что на выходе имеем только 2 типа не 
+									стал назнать каждому отдельное value -->
+                                    <option value="0" disabled selected>Тип поля</option>
+                                    <option value="1">Текст - строка</option>
+				                    <option value="1">Текст - абзац</option>
+				                    <option value="2">Один из списка</option>
+				                    <option value="2">Несколько из списка</option>
+				                    <option value="2">Заскрывающийся список</option>
+                                </select>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-12 form-group"> <!-- место для вставки блоков text и textarea -->
+							<!--<input placeholder="Placeholder" class="form-control" type="text"/>
+								<textarea placeholder="Список вопросов" class="form-control" rows="3"></textarea>-->
+							</div>
+						</div>
+						<div class="row">
+							<div class="col offset-8">
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" name="check-input" class="form-check-input"/>
+                                        Обязательный вопрос
+                                    </label>
+                                </div>
+                            </div>
+						</div>
+					</div>
+				</div>
+			</form>
+			<div class="form-group">
+				<button type="button" class="btn btn-link float-right">+Добавить поле</button>
+			</div>
+				<div class="form-group">
+					<button type="button" class="btn btn-primary" onclick="">Закрыть</button>
+					<button type="submit" class="btn btn-primary" form="edit-form">Сохранить</button>
+				</div>
+			</div>
+		</div>
+
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="js/site.js"></script>
+	</body>
+</html>
