@@ -1,0 +1,40 @@
+﻿@model AspFormEditor.Models.Form
+
+@{
+    ViewBag.Title = "Редактор форм";
+}
+<div class="justify-content-md-center container margin-top">
+    <div class=" offset-2 col-8 border border-dark work-field">
+        <h2>Редактирование формы</h2>
+        @using (Html.BeginForm("Edit", "Admin", FormMethod.Post, new { @id = "edit-form" }))
+        {
+            @Html.Partial("PartialViews/_FormEdit", Model)
+        }
+        <div class="form-group">
+            <button type="button" class="btn btn-link float-right">+Добавить поле</button>
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-primary" onclick="">Закрыть</button>
+            <button type="submit" class="btn btn-primary " form="edit-form">Сохранить</button>
+        </div>
+    </div>
+</div>
+
+@if (TempData["Message"] != null)
+{
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Форма сохранена</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    @TempData["Message"].ToString()
+                </div>
+            </div>
+        </div>
+    </div>
+}
