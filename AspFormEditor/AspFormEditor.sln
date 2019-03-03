@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2037
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspFormEditor", "AspFormEditor\AspFormEditor.csproj", "{158C6374-EC82-4821-8C7A-4F973946DF48}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{158C6374-EC82-4821-8C7A-4F973946DF48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{158C6374-EC82-4821-8C7A-4F973946DF48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{158C6374-EC82-4821-8C7A-4F973946DF48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{158C6374-EC82-4821-8C7A-4F973946DF48}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {82C31F76-FDBA-4021-8715-7D730C85506E}
+	EndGlobalSection
+EndGlobal

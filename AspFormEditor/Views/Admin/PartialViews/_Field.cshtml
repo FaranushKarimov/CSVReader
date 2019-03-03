@@ -1,0 +1,47 @@
+﻿@model AspFormEditor.Models.Field
+
+@using (Html.BeginCollectionItem("Fields"))
+{
+    <div class="justify-content-md-center border border-dark content">
+        @Html.HiddenFor(model => model.FieldId, new { @Value = (Model == null) ? "0" : Model.FieldId.ToString() })
+        <button type="button" class="close" aria-label="Close">
+            <span aria-hidden="true" class=" button-margin">&times;</span>
+        </button>
+        <div class="row">
+            <div class="col-6">
+                @Html.EditorFor(model => model.FieldTitle, new { htmlAttributes = new { @class = "form-control", @required = "true", @placeholder = "Заголовок поля" } })
+                @Html.ValidationMessageFor(model => model.FieldTitle, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-6">
+                @Html.EnumDropDownListFor(model => model.Type, "Тип поля", new { @class = "form-control selector", @required = "true" })
+                @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 form-group margin-top">
+                @if (Model.Type != null)
+                {
+                    if (Model.Type == AspFormEditor.Models.Type.Text || Model.Type == AspFormEditor.Models.Type.Paragraph)
+                    {
+                        @Html.EditorFor(model => model.Question, new { htmlAttributes = new { @class = "form-control text-box single-line", @placeholder = "Placeholder" } });
+                    }
+                    else if (Model.Type == AspFormEditor.Models.Type.ListOne || Model.Type == AspFormEditor.Models.Type.ListMany || Model.Type == AspFormEditor.Models.Type.Dropdown)
+                    {
+                        @Html.TextAreaFor(model => model.Question, new {  @class = "form-control text-box single-line", @placeholder = "Список вопросов", @rows = 3 });
+                    }
+                    @Html.ValidationMessageFor(model => model.Question, "", new { @class = "text-danger" })
+                }
+            </div>
+        </div>
+        <div class="row">
+            <div class="col offset-8">
+                <div class="form-check">
+                    <label class="form-check-label">
+                        @Html.EditorFor(model => model.Required, new { htmlAttributes = new { @class = "form-check-input" } })
+                        Обязательный вопрос
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+}
